@@ -1,11 +1,11 @@
 @media (prefers-color-scheme: dark) {
   :root {
-      --darker-colour: #1c1c1e;
-      --primary-colour: #2e2e35;
-      --secondary-colour: #48484a;
-      --hovered-colour: #636366;
-      --darker-hovered-colour: #d1d1d6;
-      --fill-colour: #c8c8c8;
+      --darker-colour: #121212;
+      --primary-colour: #1e1e1e;
+      --secondary-colour: #754be0;
+      --hovered-colour: #6d4df2;
+      --darker-hovered-colour: #ef0a4f;
+      --fill-colour: #6d4df2;
   }
 }
 
@@ -89,6 +89,8 @@ TABS
   transform: none !important;
 }
 
+
+
 /* Smooth bounce transition setup */
 .tabbrowser-tab .tab-content {
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
@@ -100,34 +102,14 @@ TABS
   transition: transform 0.05s ease-in !important; /* Fast shrink */
 }
 
+
+
 /* Target .tab-content instead of .tab-stack so the visual tab scales */
 .tabbrowser-tab[selected="true"] .tab-content {
   transform-origin: center center !important;
   animation: tab-select-bounce 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards !important;
 }
 
-/* Thanos Snap "Dusting" Close Effect */
-@keyframes snap-to-dust {
-  0% {
-    opacity: 1;
-    filter: blur(0px) grayscale(0%);
-    transform: translate(0, 0) scale(1);
-    max-width: 225px; 
-  }
-  100% {
-    opacity: 0;
-    filter: blur(8px) grayscale(100%);
-    transform: translate(15px, -15px) scale(0.85);
-    max-width: 0.1px; 
-    min-width: 0.1px;
-  }
-}
-
-/* Target the exact attribute Firefox uses when destroying a tab */
-.tabbrowser-tab[closing="true"]:not([pinned]) {
-  animation: snap-to-dust 0.35s ease-in forwards !important;
-  transition: none !important; 
-}
 
 /* Tab bar color */
 #titlebar, .toolbar-items {
@@ -172,7 +154,7 @@ padding-right: 5px !important;
 .tab-label {
 margin-top: 0px !important;
 margin-left: 4px !important;
-color : var(--fill-colour) !important;
+color : #ffffff  !important;
 }
 
 .tab-stack > vbox {
@@ -184,7 +166,8 @@ display: none !important;
 .tab-background[selected="true"],
 .tab-content:not([selected]):hover,
 .tab-background:not([selected]):hover {
-background-color: #636366 !important;
+  background-color: #636366 !important;
+  
 }
 
 /* Pinned tab position */   
@@ -716,7 +699,7 @@ width: calc(100% - 2 * (var(--urlbar-container-padding) - 3px) + 1px ) !importan
 margin-left: 1px !important;
 font-size: 13px !important;
 font-weight: 400 !important;
-color: var(--fill-colour) !important;
+color: #ffffff !important;
 }
 
 /* Remove popup url top border */
@@ -759,7 +742,7 @@ mask-image: none !important;
 .urlbarView-url {
 font-weight: 300 !important;
 font-size: 11px !important;
-color: var(--fill-colour) !important;
+color: #ffffff !important;
 margin-top: 1px !important;
 }
 
